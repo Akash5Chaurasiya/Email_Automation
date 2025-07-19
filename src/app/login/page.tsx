@@ -20,6 +20,7 @@ export default function Login() {
 
     const login = useGoogleLogin({
         scope: 'https://www.googleapis.com/auth/drive.file',
+        //@typescript-eslint/no-explicit-any
         onSuccess: (tokenResponse: any) => {
             const accessToken = tokenResponse.access_token;
             if (accessToken) {
@@ -30,6 +31,7 @@ export default function Login() {
                 toast.error('No access token received');
             }
         },
+        //@typescript-eslint/no-explicit-any
         onError: (error: any) => {
             const message = 'Login failed: ' + error;
             setError(message);

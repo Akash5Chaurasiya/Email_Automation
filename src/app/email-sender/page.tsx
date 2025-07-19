@@ -74,6 +74,7 @@ export default function EmailSender() {
             if (!scriptResponse.data) throw new Error('Script execution failed.');
             toast.success(scriptResponse.data);
             setLoading(false);
+            //@typescript-eslint/no-explicit-any
         } catch (err: any) {
             toast.error(err.message || 'Upload failed.');
             setLoading(false);
@@ -96,7 +97,7 @@ export default function EmailSender() {
 
                     <label className="flex flex-col gap-2">
                         <span className="text-sm font-medium">Upload Excel File</span>
-                        <Input type="file" accept=".xlsx" onChange={handleFileChange} className="cursor-pointer" icon={<FileUp />} />
+                        <Input type="file" accept=".xlsx" onChange={handleFileChange} className="cursor-pointer" />
                     </label>
 
                     <Input

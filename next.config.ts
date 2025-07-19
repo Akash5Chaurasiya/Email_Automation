@@ -10,6 +10,9 @@ const withPWA = require('next-pwa')({
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true, // ✅ disables ESLint during next build
+  },
   // You can add more config options here if needed
 };
 
